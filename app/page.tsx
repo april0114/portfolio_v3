@@ -16,6 +16,7 @@ import {
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import ActivitiesPage from "@/components/Activities"
+import AwardsPage from "@/components/Awards"
 
 const projects = [
   {
@@ -88,56 +89,6 @@ const experiences = [
   },
 ]
 
-const awards = [
-  {
-    title: "Best Innovation Award",
-    organization: "Seoul Tech Conference 2024",
-    description: "Recognized for outstanding contribution to web development innovation",
-    date: "2024.11",
-    icon: Trophy,
-    color: "text-yellow-500",
-  },
-  {
-    title: "2nd Place - Seoul Hackathon",
-    organization: "Seoul Metropolitan Government",
-    description: "Developed a smart city solution for traffic optimization",
-    date: "2024.08",
-    icon: Medal,
-    color: "text-gray-500",
-  },
-  {
-    title: "Outstanding Student Developer",
-    organization: "Skeong University",
-    description: "Awarded for academic excellence and project contributions",
-    date: "2024.06",
-    icon: Award,
-    color: "text-orange-500",
-  },
-  {
-    title: "Open Source Contributor of the Month",
-    organization: "GitHub",
-    description: "Recognized for significant contributions to React ecosystem",
-    date: "2024.03",
-    icon: Award,
-    color: "text-green-500",
-  },
-  {
-    title: "Best UI/UX Design Award",
-    organization: "Design Conference 2024",
-    description: "Awarded for exceptional user interface design in web applications",
-    date: "2024.01",
-    icon: Award,
-    color: "text-purple-500",
-  },
-  {
-    title: "Excellence in Programming",
-    organization: "University Programming Contest",
-    description: "First place in annual university-wide programming competition",
-    date: "2023.12",
-    icon: Trophy,
-    color: "text-blue-500",
-  },
-]
 
 export default function HomePage() {
   const [isFlying, setIsFlying] = useState(false)
@@ -189,9 +140,8 @@ export default function HomePage() {
 
             <div className="relative">
               <div
-                className={`inline-block cursor-pointer transition-all duration-[6000ms] ease-in-out ${
-                  isFlying ? "transform translate-x-[500px] -translate-y-32 rotate-12" : ""
-                }`}
+                className={`inline-block cursor-pointer transition-all duration-[6000ms] ease-in-out ${isFlying ? "transform translate-x-[500px] -translate-y-32 rotate-12" : ""
+                  }`}
                 onClick={handlePlaneClick}
               >
                 <Plane className="w-16 h-16 text-gray-700 hover:text-orange-500 transition-colors" />
@@ -199,9 +149,8 @@ export default function HomePage() {
 
               {/* 점선 트레일 - 더 천천히 나타나도록 */}
               <div
-                className={`absolute top-8 left-16 transition-all duration-[6000ms] ease-in-out ${
-                  isFlying ? "opacity-100 scale-100" : "opacity-0 scale-0"
-                }`}
+                className={`absolute top-8 left-16 transition-all duration-[6000ms] ease-in-out ${isFlying ? "opacity-100 scale-100" : "opacity-0 scale-0"
+                  }`}
               >
                 <svg width="500" height="150" className="absolute">
                   <path
@@ -347,11 +296,10 @@ export default function HomePage() {
               <button
                 onClick={prevProjectSlide}
                 disabled={currentProjectSlide === 0}
-                className={`p-2 rounded-full border-2 transition-all ${
-                  currentProjectSlide === 0
+                className={`p-2 rounded-full border-2 transition-all ${currentProjectSlide === 0
                     ? "border-gray-200 text-gray-300 cursor-not-allowed"
                     : "border-gray-300 text-gray-600 hover:border-orange-500 hover:text-orange-500"
-                }`}
+                  }`}
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
@@ -368,11 +316,10 @@ export default function HomePage() {
               <button
                 onClick={nextProjectSlide}
                 disabled={currentProjectSlide === 1}
-                className={`p-2 rounded-full border-2 transition-all ${
-                  currentProjectSlide === 1
+                className={`p-2 rounded-full border-2 transition-all ${currentProjectSlide === 1
                     ? "border-gray-200 text-gray-300 cursor-not-allowed"
                     : "border-gray-300 text-gray-600 hover:border-orange-500 hover:text-orange-500"
-                }`}
+                  }`}
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -428,53 +375,11 @@ export default function HomePage() {
       </section>
 
       {/* Activities Section */}
-            <ActivitiesPage />
+      <ActivitiesPage />
 
 
-      {/* Awards Section - 6개 아이템으로 조정 */}
-      <section id="awards" className="min-h-screen w-full bg-white p-8">
-        <div className="container mx-auto h-full flex flex-col justify-center">
-          <div className="mb-8">
-            <div className="space-y-4">
-              <h1 className="text-5xl font-bold text-black">Awards</h1>
-              <p className="text-xl text-gray-600">Recognition for my work and achievements ...</p>
-              <div className="w-full h-px bg-gray-300"></div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {awards.map((award, index) => {
-              const IconComponent = award.icon
-              return (
-                <div
-                  key={index}
-                  className="group p-6 border border-gray-200 rounded-lg hover:border-orange-300 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="flex items-start gap-4">
-                    <div
-                      className={`p-2 rounded-full bg-gray-50 group-hover:bg-orange-50 transition-colors flex-shrink-0`}
-                    >
-                      <IconComponent className={`w-6 h-6 ${award.color} group-hover:scale-110 transition-transform`} />
-                    </div>
-
-                    <div className="flex-1 space-y-2">
-                      <div className="flex justify-between items-start">
-                        <h3 className="text-lg font-bold text-black group-hover:text-orange-500 transition-colors leading-tight">
-                          {award.title}
-                        </h3>
-                        <span className="text-gray-500 text-xs font-medium ml-2 flex-shrink-0">{award.date}</span>
-                      </div>
-
-                      <p className="text-sm font-medium text-gray-700">{award.organization}</p>
-                      <p className="text-gray-600 text-sm leading-relaxed">{award.description}</p>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
+      {/* Awards Section  */}
+      <AwardsPage />
 
       {/* Contact Section */}
       <section id="contact" className="min-h-screen w-full bg-white p-8">

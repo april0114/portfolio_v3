@@ -16,7 +16,7 @@ const projects = [
   },
   {
     id: "uconnect",
-    title: "U connect",
+    title: "Yconnect",
     description: "web based on media pipe for people who work out",
     tags: ["spring boot", "react", "figma"],
     bgColor: "bg-blue-100",
