@@ -87,33 +87,6 @@ export default function UConnectProjectPage() {
             </div>
           </section>
 
-          {/* UI Section (Replaced with PC Mockup Swiper) */}
-          <section>
-            <h2 className="text-3xl font-bold mb-6 text-black">UI</h2>
-            <div className="bg-white rounded-lg p-8 shadow">
-              <div className="relative w-full max-w-4xl mx-auto">
-                <img
-                  src="/tabletmockup.png"
-                  alt="PC Frame"
-                  className="w-full"
-                />
-                <div className="absolute top-[8%] left-[7%] w-[86%] h-[78%] overflow-hidden rounded-xl">
-                  <Swiper spaceBetween={30} pagination={{ clickable: true }}>
-                    {["placeholder.jpg", "placeholder-logo.png"].map((img, idx) => (
-                      <SwiperSlide key={idx}>
-                        <img
-                          src={`/${img}`}
-                          alt={`UI ${idx + 1}`}
-                          className="w-full h-full object-cover rounded-xl"
-                        />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* Problem Solving Section */}
           <section>
             <h2 className="text-3xl font-bold mb-6 text-black">Problem Solving</h2>
@@ -145,6 +118,32 @@ export default function UConnectProjectPage() {
                       To ensure long-term scalability and stability, I implemented a cron-based log maintenance system. Every 3 months, a scheduled job is executed to automatically purge outdated logs from the database and file system. The retention period was carefully set to balance traceability with performance, and the script was tested to run safely in production without downtime.
                     </p>
                   </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl font-bold mb-6 text-black">UI</h2>
+            <div className="bg-white rounded-lg p-8 shadow">
+              <div className="relative w-full max-w-4xl mx-auto">
+                <img
+                  src="/tabletmockup.png"
+                  alt="PC Frame"
+                  className="w-full"
+                />
+                <div className="absolute top-[8%] left-[7%] w-[86%] h-[78%] overflow-hidden rounded-xl">
+                  <Swiper spaceBetween={30} pagination={{ clickable: true }}>
+                    {["placeholder.jpg", "placeholder-logo.png"].map((img, idx) => (
+                      <SwiperSlide key={idx}>
+                        <img
+                          src={`/${img}`}
+                          alt={`UI ${idx + 1}`}
+                          className="w-full h-full object-cover rounded-xl"
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
                 </div>
               </div>
             </div>

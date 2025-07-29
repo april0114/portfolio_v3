@@ -10,7 +10,7 @@ const experiences = [
   },
     {
     company: "Advice Digital Marketing Inc.",
-    position: "A/S Center",
+    position: "Web Developer",
     period: "2025.04 - Now",
     href: "/experience/adm",
   },

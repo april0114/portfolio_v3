@@ -3,28 +3,29 @@ import { ArrowLeft } from "lucide-react"
 
 const activities = [
   {
-    title: "University Programming Club",
-    description: "Led a team of 15 students in developing web applications",
-    period: "2023.03 - 2024.06",
-    category: "Leadership",
+    title: "LikeLion Coding Club",
+    description: "Provided backend development training with Django and Spring, organized workshops for student developers.",
+    period: "2023.03 - 2024.12",
+    category: "Development / Education",
+
   },
   {
-    title: "Open Source Contribution",
-    description: "Contributed to React and Node.js open source projects",
-    period: "2023.01 - Present",
-    category: "Development",
+    title: "Kakao Cloud Edu",
+    description: "Served as an assistant instructor, teaching R programming to high school students.",
+    period: "2024.09 - 2024.12",
+    category: "Education / Volunteering",
   },
   {
-    title: "Tech Conference Speaker",
-    description: "Presented on modern web development practices",
-    period: "2024.05",
-    category: "Speaking",
+    title: "CodeClub Committee",
+    description: "Volunteered as a coding mentor, teaching Scratch to elementary school students for 3 months.",
+    period: "2022.09 - 2022.12",
+    category: "Development / Education / Volunteering",
   },
   {
-    title: "Hackathon Participant",
-    description: "Participated in 5+ hackathons, won 2nd place in Seoul Hackathon",
-    period: "2023.01 - 2024.12",
-    category: "Competition",
+    title: "MAKE Education Volunteer",
+    description: "Volunteered to teach elementary school students Arduino for one month.",
+    period: "2024.01 - 2024.02",
+    category: "Development / Education / Volunteering",
   },
 ]
 
