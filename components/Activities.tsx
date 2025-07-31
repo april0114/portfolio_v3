@@ -19,13 +19,13 @@ const activities = [
     title: "CodeClub Committee",
     description: "Volunteered as a coding mentor, teaching Scratch to elementary school students for 3 months.",
     period: "2022.09 - 2022.12",
-    category: "Development / Education / Volunteering",
+    category: "Education / Volunteering",
   },
   {
     title: "MAKE Education Volunteer",
     description: "Volunteered to teach elementary school students Arduino for one month.",
     period: "2024.01 - 2024.02",
-    category: "Development / Education / Volunteering",
+    category: "Education / Volunteering",
   },
 ]
 

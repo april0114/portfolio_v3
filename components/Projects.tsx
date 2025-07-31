@@ -13,39 +13,44 @@ const projects = [
     tags: ["spring boot", "react", "figma"],
     bgColor: "bg-orange-100",
     logoColor: "text-orange-500",
+    image: "/images/livfit-logo.png"
   },
   {
     id: "uconnect",
     title: "Yconnect",
     description: "web based on media pipe for people who work out",
-    tags: ["spring boot", "react", "figma"],
+    tags: ["PHP", "WordPress", "figma", "HTML", "CSS", "JS"],
     bgColor: "bg-blue-100",
     logoColor: "text-blue-500",
+    image: "https://yconnectkorea.com/wp-content/uploads/2025/04/YCK_logo_01.png"
   },
   {
     id: "skuniv",
-    title: "skuniv.",
+    title: "skuniv-clubfair test page",
     description: "web based on media pipe for people who work out",
     tags: ["spring boot", "react", "figma"],
     bgColor: "bg-sky-200",
     logoColor: "text-sky-700",
     subtitle: "club fair MBTI",
+    image: "/images/livfit-logo.png"
   },
   {
-    id: "project4",
-    title: "LIVFIT",
+    id: "skuniv_festival",
+    title: "skuniv-festival page",
     description: "web based on media pipe for people who work out",
-    tags: ["spring boot", "react", "figma"],
+    tags: ["HTML", "CSS", "JS", "figma"],
     bgColor: "bg-gray-100",
     logoColor: "text-gray-700",
+    image: "/images/livfit-logo.png"
   },
   {
-    id: "project5",
-    title: "LIVFIT",
-    description: "web based on media pipe for people who work out",
-    tags: ["spring boot", "react", "figma"],
+    id: "Zinus",
+    title: "ZINUS DREAM VIBE",
+    description: "B2B website introducing Hyundai Zinus’ new DreamVibe mattress collection.",
+    tags: ["PHP", "WordPress", "figma", "HTML", "CSS", "JS"],
     bgColor: "bg-blue-100",
     logoColor: "text-blue-500",
+    image: "/images/livfit-logo.png"
   },
 ]
 
@@ -78,8 +83,6 @@ export default function ProjectsPage() {
             href="/"
             className="inline-flex items-center text-gray-600 hover:text-orange-500 transition-colors mb-8"
           >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back
           </Link>
 
           <div className="space-y-4">
@@ -99,11 +102,17 @@ export default function ProjectsPage() {
                 <CardContent className="p-0">
                   <div className={`${project.bgColor} h-48 flex items-center justify-center relative overflow-hidden`}>
                     <div className="text-center">
-                      <h3
-                        className={`text-3xl font-bold ${project.logoColor} group-hover:scale-110 transition-transform duration-300`}
-                      >
-                        {project.title}
-                      </h3>
+                      {project.image ? (
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="h-20 mx-auto object-contain group-hover:scale-110 transition-transform duration-300"
+                        />
+                      ) : (
+                        <h3 className={`text-3xl font-bold ${project.logoColor} group-hover:scale-110 transition-transform duration-300`}>
+                          {project.title}
+                        </h3>
+                      )}
                       {project.subtitle && <p className="text-sm text-gray-600 mt-2">{project.subtitle}</p>}
                     </div>
                   </div>
