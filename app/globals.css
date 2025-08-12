@@ -79,12 +79,18 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
-
 @layer base {
-  * {
-    @apply border-border;
+  :root {
+    --font-body: var(--font-en); /* 기본은 영어 */
   }
+  .lang-ko {
+    --font-body: var(--font-ko); /* 한국어일 때 */
+  }
+
   body {
-    @apply bg-background text-foreground;
+    font-family: var(--font-body), ui-sans-serif, system-ui, -apple-system,
+      Segoe UI, Roboto, Helvetica, Arial, "Apple SD Gothic Neo",
+      "Noto Sans KR", "Malgun Gothic", "맑은 고딕", "Nanum Gothic", sans-serif;
   }
 }
+

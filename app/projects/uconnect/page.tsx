@@ -66,8 +66,8 @@ export default function UConnectProjectPage() {
                 <div>
                   <h3 className="text-xl font-semibold mb-3">Key Features</h3>
                   <ul className="space-y-2 text-gray-700">
-                    <li>• Easy eSIM/USIM pre-ordering for Korea-bound travelers</li>
-                    <li>• Bilingual support (Korean & English)</li>
+                    <li>• Easy eSIM/USIM pre-ordering for Korea-bound travelers(no-login)</li>
+                    <li>• plugin exporting date-based records to a CSV file</li>
                     <li>• Automated email confirmation for orders</li>
                     <li>• Mobile-friendly responsive design</li>
                     <li>• REST API integration for fulfillment automation</li>
