@@ -33,13 +33,6 @@ export default function ExperiencePage() {
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-8 py-12">
         <div className="mb-12">
-          <Link
-            href="/"
-            className="inline-flex items-center text-gray-600 hover:text-orange-500 transition-colors mb-8"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back
-          </Link>
 
           <div className="space-y-4">
             <h1 className="text-5xl font-bold text-black">Experience</h1>

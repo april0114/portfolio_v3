@@ -113,13 +113,13 @@ export default function ContactPage() {
                   <h3 className="text-xl font-bold text-black group-hover:text-orange-500 transition-colors">
                     {t.email}
                   </h3>
-                  <p className="text-gray-600">businessrim00</p>
+                  <p className="text-gray-600">businessrim</p>
                 </div>
               </a>
 
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com"
+                href="www.linkedin.com/in/kyungrim-ha-96a921252"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group p-8 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-lg transition-all duration-300 text-center"

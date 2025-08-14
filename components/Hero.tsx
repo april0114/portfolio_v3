@@ -1,32 +1,45 @@
 export default function HeroPage() {
   return (
-    <div>
+    <div className="relative min-h-screen flex flex-col">
       <section
         id="home"
-        className="min-h-screen w-full flex items-center justify-center p-8 bg-white relative"
+        className="flex-1 w-full flex items-center justify-center p-8 bg-white relative"
       >
+        {/* 데스크탑용: 섹션 위쪽 라인 (full-bleed) */}
+        <span className="hidden lg:block pointer-events-none absolute left-10 right-10 inset-x-0 top-20 h-[2px] bg-black" />
+
         <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* 왼쪽 텍스트 */}
           <div className="space-y-8">
-            <div className="space-y-6">
-              <h1 className="text-8xl md:text-9xl font-bold text-black leading-tight">
+            {/* 모바일/태블릿 전용: 텍스트 블록 위/아래 라인 */}
+            <div className="relative space-y-6 px-1 py-8 lg:py-0 left-10 right-10">
+              {/* 위 라인 (모바일 전용) */}
+              <span className="block lg:hidden absolute left-0 right-0 top-0 h-[2px] bg-black" />
+
+              <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-black leading-tight">
                 Hi, I am April,
               </h1>
-              <p className="text-3xl md:text-4xl text-gray-600 leading-relaxed">
+              <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600 leading-relaxed">
                 asdfasdfasdfasdfasdf
                 <br />
                 asdfasdfasdfasdfasdf
                 <br />
                 asdfasdfasdfasdfasd
               </p>
+
+              {/* 아래 라인 (모바일 전용) */}
+              <span className="block lg:hidden absolute left-10 right-10 bottom-0 h-[2px] bg-black" />
             </div>
           </div>
 
           {/* 오른쪽 원 */}
           <div className="flex justify-center lg:justify-end">
-            <div className="w-96 h-96 bg-blue-400 rounded-full"></div>
+            <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-blue-400 rounded-full" />
           </div>
         </div>
+
+        {/* 데스크탑용: 섹션 내부 하단에서 40px 위 라인 (full-bleed) */}
+        <div className="hidden lg:block absolute bottom-40 w-full left-10 right-10 h-[2px] bg-black" />
       </section>
     </div>
   )
