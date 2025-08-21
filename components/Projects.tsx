@@ -102,32 +102,34 @@ export default function ProjectsPage() {
         style={{ width: `${scrollProgress * 100}%` }}
       />
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12">
-        <div className="mb-6 sm:mb-8 md:mb-12">
-          <div className="space-y-2 sm:space-y-3 md:space-y-4">
-            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-black tracking-tight">
-              Projects
-            </h1>
-            <p className="text-sm sm:text-base md:text-xl text-gray-600">
-              that i am proud of ... and lead me for getting jobs
-            </p>
-            <div className="w-full h-px bg-gray-200" />
-          </div>
-        </div>
+<div className="container px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 text-left">
+  <div className="mb-8 sm:mb-12 md:mb-16">
+    <div className="space-y-4 sm:space-y-6 md:space-y-8">
+      <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-black leading-tight tracking-tighter">
+        Projects
+      </h1>
+      <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 max-w-3xl">
+        that i am proud of ... and lead me for getting jobs
+      </p>
+      <div className="w-full h-0.5 bg-black" />
+    </div>
+  </div>
+
+
 
         {/* Carousel */}
         <div className="relative">
           {/* Prev/Next (desktop) */}
           <button
             onClick={scrollPrev}
-            className="hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-10 h-10 rounded-full border bg-white/80 backdrop-blur border-gray-200 hover:bg-white transition shadow"
+            className="hidden md:flex absolute -left-20 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-10 h-10 rounded-full border bg-white/80 backdrop-blur border-gray-200 hover:bg-white transition shadow"
             aria-label="Previous"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
           <button
             onClick={scrollNext}
-            className="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-10 h-10 rounded-full border bg-white/80 backdrop-blur border-gray-200 hover:bg-white transition shadow"
+            className="hidden md:flex absolute -right-16 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-10 h-10 rounded-full border bg-white/80 backdrop-blur border-gray-200 hover:bg-white transition shadow"
             aria-label="Next"
           >
             <ArrowRight className="w-5 h-5" />
@@ -150,7 +152,7 @@ export default function ProjectsPage() {
                     pr-3 sm:pr-4 md:pr-6
                   "
                 >
-                  <Card className="group h-full cursor-pointer border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 rounded-xl md:rounded-2xl overflow-hidden">
+                  <Card className="group h-full cursor-pointer border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 rounded-none overflow-hidden">
                     <Link href={`/projects/${project.id}`} className="block h-full">
                       <CardContent className="p-0 h-full flex flex-col min-h-0">
                         {/* Thumb */}
