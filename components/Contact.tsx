@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Instagram, Mail, Linkedin } from "lucide-react";
+import { Instagram, Mail, Linkedin, ArrowLeft } from "lucide-react";
 
 type Lang = "en" | "ko";
 
@@ -33,8 +33,7 @@ const copy: Record<
   ko: {
     title: "연락하기",
     subtitle: "돈과 친구가 필요합니다 ...",
-    intro:
-      "아래 채널로 언제든 편하게 연락 주세요. 새로운 기회, 협업, 혹은 가벼운 수다도 환영합니다!",
+    intro: "아래 채널로 언제든 편하게 연락 주세요. 새로운 기회, 협업, 혹은 가벼운 수다도 환영합니다!",
     back: "뒤로가기",
     ig: "인스타그램",
     email: "이메일",
@@ -45,13 +44,33 @@ const copy: Record<
 
 export default function ContactPage() {
   const [lang, setLang] = useState<Lang>("en");
+  const [scrollProgress, setScrollProgress] = useState(0);
   const t = copy[lang];
 
   const toggleLang = () => setLang((p) => (p === "en" ? "ko" : "en"));
 
+  // 상단 진행바
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+      setScrollProgress(progress);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white text-[15px] sm:text-base">
-      {/* 언어 전환 버튼 (모바일 더 작게, iOS safe-area 반영) */}
+      {/* progress bar (사이트 전반 통일) */}
+      <div
+        className="fixed top-0 left-0 h-[3px] md:h-1 bg-orange-500 transition-all duration-300 z-50"
+        style={{ width: `${scrollProgress * 100}%` }}
+      />
+
+      {/* 언어 전환 버튼 */}
       <button
         onClick={toggleLang}
         className="
@@ -67,29 +86,25 @@ export default function ContactPage() {
         {lang === "en" ? "한국어" : "English"}
       </button>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12">
-        <div className="mb-8 sm:mb-12">
-
-          <div className="space-y-3 sm:space-y-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
+      <div className="container px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 text-left">
+        {/* 헤더 */}
+        <div className="mb-8 sm:mb-12 md:mb-16">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-black leading-tight tracking-tighter">
               {t.title}
             </h1>
-            <p className="text-sm sm:text-base md:text-xl text-gray-600">
-              {t.subtitle}
-            </p>
-            <div className="w-full h-px bg-gray-300" />
+            <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 max-w-3xl">{t.subtitle}</p>
+            <div className="w-full h-0.5 bg-black" />
           </div>
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <div className="space-y-8">
+          <div className="space-y-8 sm:space-y-10">
             <div className="text-center space-y-4 sm:space-y-6">
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                {t.intro}
-              </p>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">{t.intro}</p>
             </div>
 
-            {/* 모바일 1열 → md부터 3열 */}
+            {/* 카드: 모바일 1열 → md 3열 */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
               {/* Instagram */}
               <a
@@ -97,9 +112,9 @@ export default function ContactPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                  group text-center rounded-xl md:rounded-2xl
-                  border border-gray-200 hover:border-pink-300
-                  transition-all duration-300 hover:shadow-lg
+                  group text-center rounded-none
+                  border border-gray-200 hover:border-gray-300
+                  transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5
                   p-5 sm:p-6 md:p-8
                   focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-400
                   block
@@ -120,9 +135,9 @@ export default function ContactPage() {
               <a
                 href="mailto:businessrim00@gmail.com"
                 className="
-                  group text-center rounded-xl md:rounded-2xl
-                  border border-gray-200 hover:border-orange-300
-                  transition-all duration-300 hover:shadow-lg
+                  group text-center rounded-none
+                  border border-gray-200 hover:border-gray-300
+                  transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5
                   p-5 sm:p-6 md:p-8
                   focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400
                   block
@@ -135,9 +150,7 @@ export default function ContactPage() {
                   <h3 className="text-lg sm:text-xl font-bold text-black group-hover:text-orange-500 transition-colors">
                     {t.email}
                   </h3>
-                  <p className="text-gray-600 text-sm sm:text-base break-words">
-                    businessrim00@gmail.com
-                  </p>
+                  <p className="text-gray-600 text-sm sm:text-base break-words">businessrim00@gmail.com</p>
                 </div>
               </a>
 
@@ -147,9 +160,9 @@ export default function ContactPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                  group text-center rounded-xl md:rounded-2xl
-                  border border-gray-200 hover:border-blue-300
-                  transition-all duration-300 hover:shadow-lg
+                  group text-center rounded-none
+                  border border-gray-200 hover:border-gray-300
+                  transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5
                   p-5 sm:p-6 md:p-8
                   focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400
                   block
@@ -162,9 +175,7 @@ export default function ContactPage() {
                   <h3 className="text-lg sm:text-xl font-bold text-black group-hover:text-blue-500 transition-colors">
                     {t.linkedin}
                   </h3>
-                  <p className="text-gray-600 text-sm sm:text-base break-words">
-                    kyungrimha
-                  </p>
+                  <p className="text-gray-600 text-sm sm:text-base break-words">kyungrimha</p>
                 </div>
               </a>
             </div>
