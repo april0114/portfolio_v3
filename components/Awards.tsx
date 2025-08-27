@@ -146,15 +146,17 @@ export default function AwardsPage() {
 
       {/* 헤더 (스케일 통일) */}
       <header className="container px-4 sm:px-6 md:px-8 pt-8 sm:pt-12 md:pt-16 pb-4 sm:pb-18 md:pb-12 text-left">
-        <div className="space-y-4 sm:space-y-6 md:space-y-8">
+        <div className="flex flex-col sm:flex-row sm:items-end gap-2 sm:gap-4">
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-black leading-tight tracking-tighter">
             {lang === "en" ? "Awards" : "수상"}
           </h1>
-          <p className="mt-0 text-xl sm:text-2xl md:text-3xl text-gray-700 max-w-3xl">
+
+          <p className="mb-4 mt-0 text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl">
             {lang === "en" ? "Recognition for my work and achievements ..." : "저의 활동과 성과로 받은 수상 내역입니다"}
           </p>
-          <div className="w-full h-0.5 bg-black" />
         </div>
+
+        <div className="w-full h-0.5 bg-black" />
       </header>
 
       {/* === 모바일/태블릿: 2×2 그리드 + 모달 === */}
