@@ -105,7 +105,7 @@ export default function ProjectsPage() {
 <div className="container px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 text-left">
   <div className="mb-8 sm:mb-12 md:mb-16">
     <div className="space-y-4 sm:space-y-6 md:space-y-8">
-      <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-black leading-tight tracking-tighter">
+      <h1 className="text-5xl sm:text-5xl md:text-7xl font-extrabold text-black leading-tight tracking-tighter">
         Projects
       </h1>
       <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 max-w-3xl">
@@ -210,7 +210,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* Dots */}
-          <div className="mt-6 flex items-center justify-center gap-2">
+          <div className="mt-9 flex items-center justify-center gap-2">
             {scrollSnaps.map((_, idx) => (
               <button
                 key={idx}

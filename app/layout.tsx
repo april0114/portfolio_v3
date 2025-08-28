@@ -15,10 +15,6 @@ const notoSansKR = Noto_Sans_KR({
   variable: "--font-ko", // 한국어 폰트 변수명
 });
 
-export const metadata: Metadata = {
-  title: "April's Portfolio",
-  description: "Portfolio website of April - Developer",
-};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
